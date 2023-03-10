@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 15:49:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:02:01 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	print_error(int errn);
 void	mlxconfig(t_mdata *m);
 int		exit_fdf(t_mdata *m);
 int		keyboard_commands(int nkey, t_mdata *m);
+
 void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	putpixel(t_mdata *m, int x, int y, int color);
 void	print_bresenham(t_mdata *m);

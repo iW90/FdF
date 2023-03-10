@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 16:00:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:57:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
  */
 void	translation_matrix(double res[4][4], int row, int col)
 {
-	res[3][0] = row - 300;
-	res[3][1] = -col + 300;
-	res[3][2] = -3;
+	res[3][0] = row;
+	res[3][1] = -col;
+	res[3][2] = -5;
 	res[2][2] = 0.05;
 }
 
@@ -110,7 +110,7 @@ void	concat_matrix(double res[4][4])
 	angulation_matrix(mz, M_PI * 0.304, 'x');
 	multiply_matrix(rescopy, mz, res);
 	copy_matrix(res, rescopy);
-	fill_matrix(mz, 1);
+	fill_matrix(mz, 20);
 	mz[3][3] = 1;
 	multiply_matrix(rescopy, mz, res);
 }
