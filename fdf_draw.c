@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/08 22:26:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:51:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ void	print_bresenham(t_mdata *m)
 		while (j < m->row)
 		{
 			if ((i + 1) != m->col)
-				plotLine(m, &m->coord[i][j], &m->coord[i + 1][j]);
+				plot_line(m, &m->coord[i][j], &m->coord[i + 1][j]);
 			if ((j + 1) != m->row)
-				plotLine(m, &m->coord[i][j], &m->coord[i][j + 1]);
+				plot_line(m, &m->coord[i][j], &m->coord[i][j + 1]);
 			//printf("m->coord[%i][%i]\nX: %.0f\nY: %.0f\nZ: %.0f\n\n", i, j, m->coord[i][j].coord[0], m->coord[i][j].coord[1], m->coord[i][j].coord[2]);
 			j++;
 		}

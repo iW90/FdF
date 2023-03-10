@@ -6,18 +6,29 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 11:39:54 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:03:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 // ALGORITMO DE BRESENHAM
-/* é um algoritmo criado para o desenho de linhas que permite determinar quais os
- * pontos numa matriz de base quadriculada que devem ser destacados para atender
- * o grau de inclinação de um ângulo. Detalhado em:
+/* é um algoritmo criado para o desenho de linhas que permite determinar quais
+ * os pontos numa matriz de base quadriculada que devem ser destacados para
+ * atender o grau de inclinação de um ângulo. Detalhado em:
  * https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
  */
+
+static void	delta_set(t_delta *d, t_coordinates *stt, t_coordinates *end)
+{
+	d->x0 = stt->coord[0];
+	d->x1 = end->coord[0];
+	d->y0 = stt->coord[1];
+	d->y1 = end->coord[1];
+	d->dx = d->x1 - d->x0;
+	d->dy = d->y1 - d->y0;
+}
+
 static void	delta_swap(t_delta *d)
 {
 	int	tempy;
@@ -33,7 +44,7 @@ static void	delta_swap(t_delta *d)
 	d->dy = d->y1 - d->y0;
 }
 
-static void	plotLineHigh(t_mdata *m, t_delta *d, int color)
+static void	plot_line_high(t_mdata *m, t_delta *d, int color)
 {
 	int	xi;
 	int	x;
@@ -62,7 +73,7 @@ static void	plotLineHigh(t_mdata *m, t_delta *d, int color)
 	}
 }
 
-static void	plotLineLow(t_mdata *m, t_delta *d, int color)
+static void	plot_line_low(t_mdata *m, t_delta *d, int color)
 {
 	int	yi;
 	int	x;
@@ -91,7 +102,35 @@ static void	plotLineLow(t_mdata *m, t_delta *d, int color)
 	}
 }
 
-void	plotLine(t_mdata *m, t_coordinates *stt, t_coordinates *end)
+void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end)
+{
+	t_delta	d;
+
+	delta_set(&d, stt, end);
+	if (abs(d.y1 - d.y0) < abs(d.x1 - d.x0))
+	{
+		if (d.x0 > d.x1)
+		{
+			delta_swap(&d);
+			plot_line_low(m, &d, stt->color);
+		}
+		else
+			plot_line_low(m, &d, stt->color);
+	}
+	else
+	{
+		if (d.y0 > d.y1)
+		{
+			delta_swap(&d);
+			plot_line_high(m, &d, stt->color);
+		}
+		else
+			plot_line_high(m, &d, stt->color);
+	}
+}
+
+/*
+void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end)
 {
 	t_delta	d;
 
@@ -106,19 +145,21 @@ void	plotLine(t_mdata *m, t_coordinates *stt, t_coordinates *end)
 		if (d.x0 > d.x1)
 		{
 			delta_swap(&d);
-			plotLineLow(m, &d, stt->color);
+			plot_line_low(m, &d, stt->color);
 		}
 		else
-			plotLineLow(m, &d, stt->color);
+			plot_line_low(m, &d, stt->color);
 	}
 	else
 	{
 		if (d.y0 > d.y1)
 		{
 			delta_swap(&d);
-			plotLineHigh(m, &d, stt->color);
+			plot_line_high(m, &d, stt->color);
 		}
 		else
-			plotLineHigh(m, &d, stt->color);
+			plot_line_high(m, &d, stt->color);
 	}
 }
+
+*/
