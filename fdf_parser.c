@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 15:15:38 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:03:08 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,7 @@ static void	populate_map(t_mdata *m, int fd)
 	while (j < m->row)
 	{
 		strrow = get_next_line(fd);
-
-		
 		get_data(strrow, m, j);
-
-		
 		j++;
 		free(strrow);
 	}

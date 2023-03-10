@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 15:51:14 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:09:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,35 +62,7 @@ int	main(int argc, char *argv[])
 
 	/* Drawing */
 	
-
-	/* Testes */
-	//printf("row %d\n", mlxdata.row);
-	//printf("col %d\n", mlxdata.col);
-	//printmap(&mlxdata);
 	
 	return (0);
 }
 
-/*
-//Teste do Parser
-void	printmap(t_mdata *ms)
-{
-	int	i;
-	int	j;
-	
-	i = 0;
-	while (i < ms->col)
-	{
-		j = 0;
-		{
-			while (j < ms->row)
-			{
-				//if (ms->coord[i][j].color)
-					printf("Col: %.0f | Row: %.0f | Z: %.0f | Color: %i\n", ms->coord[i][j].coord[0], ms->coord[i][j].coord[1], ms->coord[i][j].coord[2], ms->coord[i][j].color);
-				j++;
-			}
-		}
-		i++;
-	}
-}
-*/
