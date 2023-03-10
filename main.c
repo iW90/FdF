@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 10:42:14 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:51:14 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char *argv[])
 	map_creator(&mlxdata, fd);
 
 	/* Matrix */
-	fill_idMatrix(mlxdata.matrix, 1);
+	fill_matrix(mlxdata.matrix, 1);
 	translation_matrix(mlxdata.matrix, mlxdata.row, mlxdata.col);
 	concat_matrix(mlxdata.matrix);
 	mod_coord(&mlxdata, mlxdata.matrix);

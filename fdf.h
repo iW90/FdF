@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 13:02:46 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:49:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,12 @@ typedef struct s_delta
 int		ft_strncmp(const char *stra, const char *strb, size_t n);
 int		ft_atoi_base(const char *str, int base);
 
-int		define_size(t_mdata *m, int fd);
+void	define_size(t_mdata *m, int fd);
+void	map_creator(t_mdata *m, int fd);
 
 void	super_free(int rowtofree, t_mdata *m, int errn);
 void	print_error(int errn);
-void	map_creator(t_mdata *m, int fd);
+
 void	mlxconfig(t_mdata *m);
 int		exit_fdf(t_mdata *m);
 int		keyboard_commands(int nkey, t_mdata *m);
@@ -80,12 +81,11 @@ void	putpixel(t_mdata *m, int x, int y, int color);
 void	print_bresenham(t_mdata *m);
 
 void	mod_coord(t_mdata *m, double mtest[4][4]);
-void	dot_product(t_coordinates *c, double m[4][4]);
-void	angle_matrix(double mat[4][4], double rad, char axis);
+void	angulation_matrix(double mat[4][4], double rad, char axis);
 void	concat_matrix(double res[4][4]);
 void	translation_matrix(double res[4][4], int row, int col);
 
-void	fill_idMatrix(double matrix[4][4], double n);
+void	fill_matrix(double matrix[4][4], double n);
 void	copy_matrix(double srcm[4][4], double dstm[4][4]);
 void	multiply_matrix(double matA[4][4], double matB[4][4], double mProduct[4][4]);
 

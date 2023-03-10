@@ -6,13 +6,59 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 11:44:50 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 15:15:38 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	get_info(char *strrow, t_mdata *m, int j)
+// DIMENSIONADOR
+/* Realiza a contagem das colunas e linhas para definir, respectivamente, a
+ * largura e altura do mapa. A quantidade de colunas se refere ao eixo X,
+ * enquanto a quantidade de linhas se refere ao eixo Y.
+ */
+static int	define_width(char *strrow, t_mdata *m)
+{
+	while (*strrow != '\n' && *strrow != '\0')
+	{
+		while (*strrow == ' ')
+			strrow++;
+		if (*strrow != '\n' && *strrow != '\0')
+			m->col++;
+		while (*strrow != ' ' && *strrow != '\n' && *strrow != '\0')
+			strrow++;
+	}
+	return (m->col);
+}
+
+void	define_size(t_mdata *m, int fd)
+{
+	char	*gnlrow;
+
+	m->row = 0;
+	m->col = 0;
+	gnlrow = get_next_line(fd);
+	m->col = define_width(gnlrow, m);
+	free(gnlrow);
+	while (gnlrow)
+	{
+		gnlrow = get_next_line(fd);
+		if (gnlrow)
+		{
+			m->row++;
+			free(gnlrow);
+		}
+	}
+	if (m->row != 0)
+		m->row++;
+}
+
+// PARSEADOR
+/* Com a largura e a altura já definidas, o parseador percorre novamente
+ * o mapa, dessa vez coletando as informações e atribuindo às posições
+ * alocadas na memória.
+ */
+static void	get_data(char *strrow, t_mdata *m, int j)
 {
 	int		i;
 
@@ -42,7 +88,7 @@ void	get_info(char *strrow, t_mdata *m, int j)
 	}
 }
 
-void	populate_map(t_mdata *m, int fd)
+static void	populate_map(t_mdata *m, int fd)
 {
 	int		j;
 	char	*strrow;
@@ -51,7 +97,11 @@ void	populate_map(t_mdata *m, int fd)
 	while (j < m->row)
 	{
 		strrow = get_next_line(fd);
-		get_info(strrow, m, j);
+
+		
+		get_data(strrow, m, j);
+
+		
 		j++;
 		free(strrow);
 	}

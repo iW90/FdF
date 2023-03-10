@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 13:03:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:42:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,38 +128,3 @@ void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end)
 			plot_line_high(m, &d, stt->color);
 	}
 }
-
-/*
-void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end)
-{
-	t_delta	d;
-
-	d.x0 = stt->coord[0];
-	d.x1 = end->coord[0];
-	d.y0 = stt->coord[1];
-	d.y1 = end->coord[1];
-	d.dx = d.x1 - d.x0;
-	d.dy = d.y1 - d.y0;
-	if (abs(d.y1 - d.y0) < abs(d.x1 - d.x0))
-	{
-		if (d.x0 > d.x1)
-		{
-			delta_swap(&d);
-			plot_line_low(m, &d, stt->color);
-		}
-		else
-			plot_line_low(m, &d, stt->color);
-	}
-	else
-	{
-		if (d.y0 > d.y1)
-		{
-			delta_swap(&d);
-			plot_line_high(m, &d, stt->color);
-		}
-		else
-			plot_line_high(m, &d, stt->color);
-	}
-}
-
-*/
