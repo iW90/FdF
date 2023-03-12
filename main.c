@@ -6,13 +6,11 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 11:14:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:45:21 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-//void	printmap(t_mdata *ms);
 
 int	main(int argc, char *argv[])
 {
@@ -39,6 +37,7 @@ int	main(int argc, char *argv[])
 	if (fd < 0)
 		print_error(-1);
 	define_size(&mlxdata, fd);
+	
 	fd = close(fd);
 
 
@@ -50,11 +49,10 @@ int	main(int argc, char *argv[])
 
 	/* Matrix */
 	mlxdata.zoom = WIN_HEIGHT / sqrt(pow(mlxdata.col, 2) + pow(mlxdata.row, 2));
-	printf("Zoom: %f\n", mlxdata.zoom);
 	fill_matrix(mlxdata.matrix, 1);
 	translation_matrix(mlxdata.matrix, mlxdata.row, mlxdata.col);
 	concat_matrix(mlxdata.matrix, mlxdata.zoom);
-	mod_coord(&mlxdata, mlxdata.matrix);
+	modifier_dot_prod(&mlxdata, mlxdata.matrix);
 	
 	fd = close(fd);
 

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 10:52:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:46:26 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	translation_matrix(double res[4][4], int row, int col)
 	res[3][0] = row;
 	res[3][1] = -col;
 	res[3][2] = -5;
-	res[2][2] = 1;
+	res[2][2] = 0.1;//coloca m->zoom pra testar
 }
 
 // ROTACIONA O MAPA: ROTAÇÃO
@@ -56,7 +56,7 @@ void	angulation_matrix(double mat[4][4], double rad, char axis)
 }
 
 // PRODUTO ESCALAR (DOT PRODUCT)
-/*
+/* Função coringa para aplicar uma multiplicação nos valores X, Y e Z.
  * https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/math-operations-on-points-and-vectors.html
  */
 static void	dot_product(t_coordinates *c, double m[4][4])
@@ -74,7 +74,7 @@ static void	dot_product(t_coordinates *c, double m[4][4])
 	c->coord[2] = temp[2];
 }
 
-void	mod_coord(t_mdata *m, double mtest[4][4])
+void	modifier_dot_prod(t_mdata *m, double mtest[4][4])
 {
 	int		i;
 	int		j;

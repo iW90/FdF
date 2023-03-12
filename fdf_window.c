@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 19:03:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:44:19 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	mlxconfig(t_mdata *m)
 
 int	exit_fdf(t_mdata *m)
 {
+	mlx_destroy_image(m->mlxm, m->image->img);
 	mlx_destroy_window(m->mlxm, m->wind);
 	mlx_destroy_display(m->mlxm);
+	super_free(m->col, m, 0);
 	free(m->mlxm);
 	exit(0);
 	return (0);

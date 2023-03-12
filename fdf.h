@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 10:50:28 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:45:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	putpixel(t_mdata *m, int x, int y, int color);
 void	print_bresenham(t_mdata *m);
 
-void	mod_coord(t_mdata *m, double mtest[4][4]);
+void	modifier_dot_prod(t_mdata *m, double mtest[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
 void	concat_matrix(double res[4][4], double scale);
 void	translation_matrix(double res[4][4], int row, int col);
