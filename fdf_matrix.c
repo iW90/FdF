@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 16:40:51 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:36:58 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,13 @@ void	apply_dot_prod(t_mdata *m, double mtest[4][4])
 	}
 }
 
-//
-/*
- * M_PI * 0.25 angulo de 45º
- * M_PI * 0.304 angulo de //54,736 //35,264 (arctg(30))
+// ISOMETRIC PROJETION - ROTATION ANGLES
+/* Na projeção isométrica, o eixo X é inclinado em 45º, enquanto o
+ * eixo Z é inclinado cerca de 35.264° (arctg(1/√2)).
+ * (M_PI * 0.25) radianos equivale ao ângulo de 45º
+ * (M_PI * 0.304) radianos equivale ao ângulo de 54.736º
+ *     (complemento do 35.264°)
+ * https://en.wikipedia.org/wiki/Isometric_projection
  */
 void	matrix_combinator(double mmatrix[4][4], double scale)
 {

@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 16:42:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:35:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,10 @@ static int	get_data(char *strrow, t_mdata *m, int j, int i)
 
 static void	populate_map(t_mdata *m, int fd)
 {
-	int		j;
-	int		i;
 	char	*strrow;
 	int		dif;
+	int		i;
+	int		j;
 
 	j = 0;
 	while (j < m->row)
@@ -107,6 +107,9 @@ static void	populate_map(t_mdata *m, int fd)
 		j++;
 		free(strrow);
 	}
+	strrow = get_next_line(fd);
+	if (strrow)
+		free(strrow);
 }
 
 void	map_creator(t_mdata *m, int fd)

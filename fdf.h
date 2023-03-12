@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 16:43:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 19:27:53 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include "get_next_line.h"
 
 #  define ESC_KEY 65307
-#  define WIN_WIDTH 1920 
-#  define WIN_HEIGHT 1080 
+#  define WIN_WIDTH 1920 /2
+#  define WIN_HEIGHT 1080 /2
 
 typedef struct s_image
 {
