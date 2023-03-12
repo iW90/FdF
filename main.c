@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 11:01:46 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:14:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char *argv[])
 	/* Mapeando dimensões */
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		print_error(0);
+		print_error(-1);
 	define_size(&mlxdata, fd);
 	fd = close(fd);
 
@@ -45,7 +45,7 @@ int	main(int argc, char *argv[])
 	/* Clonando mapa */
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-		print_error(0);
+		print_error(-1);
 	map_creator(&mlxdata, fd);
 
 	/* Matrix */
