@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 13:40:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:18:25 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	plot_line_high(t_mdata *m, t_delta *d, int color)
 	y = d->y0;
 	while (y < d->y1)
 	{
-		putpixel(m, x, y, color);
+		put_pixel(m, x, y, color);
 		if (d->dm > 0)
 		{
 			x = x + xi;
@@ -89,7 +89,7 @@ static void	plot_line_low(t_mdata *m, t_delta *d, int color)
 	y = d->y0;
 	while (x < d->x1)
 	{
-		putpixel(m, x, y, color);
+		put_pixel(m, x, y, color);
 		if (d->dm > 0)
 		{
 			y = y + yi;

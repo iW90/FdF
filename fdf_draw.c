@@ -6,13 +6,13 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 13:41:09 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:18:17 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	putpixel(t_mdata *m, int x, int y, int color)
+void	put_pixel(t_mdata *m, int x, int y, int color)
 {
 	char	*brush;
 
