@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 15:18:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:43:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include "get_next_line.h"
 
 #  define ESC_KEY 65307
-#  define WIN_WIDTH 1920 /2
-#  define WIN_HEIGHT 1080 /2
+#  define WIN_WIDTH 1920 
+#  define WIN_HEIGHT 1080 
 
 typedef struct s_image
 {
@@ -90,5 +90,8 @@ void	translation_matrix(double res[4][4], int row, int col);
 void	fill_matrix(double matrix[4][4], double n);
 void	copy_matrix(double srcm[4][4], double dstm[4][4]);
 void	multiplier_matrix(double matA[4][4], double matB[4][4], double mProduct[4][4]);
+
+void	map_maker(char **argv, t_mdata *mlxdata);
+void	matrix_maker(t_mdata *mlxdata);
 
 #endif

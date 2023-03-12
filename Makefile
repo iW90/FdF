@@ -6,17 +6,28 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/12 15:13:32 by inwagner         ###   ########.fr        #
+#    Updated: 2023/03/12 16:37:04 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME	= fdf
-CFLAG	= -Wall -Werror -Wextra
-MFLAG	= -lbsd -lmlx -lXext -lX11 -lm
-HDR		= -I ./
-LBX		= /usr/local/lib/libmlx.a
-FTS		= fdf_parser.c fdf_exit.c fdf_utils.c get_next_line.c get_next_line_utils.c fdf_window.c fdf_bresenham.c fdf_draw.c fdf_matrix.c fdf_matrix_utils.c main.c
+NAME	=	fdf
+CFLAG	=	-Wall -Werror -Wextra
+MFLAG	=	-lbsd -lmlx -lXext -lX11 -lm
+HDR		=	-I ./
+LBX		=	/usr/local/lib/libmlx.a
+FTS		=	get_next_line.c \
+			get_next_line_utils.c \
+			main.c \
+			fdf_utils.c \
+			fdf_makers.c \
+			fdf_parser.c \
+			fdf_exit.c \
+			fdf_matrix.c \
+			fdf_matrix_utils.c \
+			fdf_window.c \
+			fdf_bresenham.c \
+			fdf_draw.c \
 
 all:
 	cc ${CFLAG} ${HDR} ${FTS} ${LBX} ${MFLAG} -g -o ${NAME}

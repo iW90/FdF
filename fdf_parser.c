@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 11:03:36 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:42:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	define_width(char *strrow, t_mdata *m)
 void	define_size(t_mdata *m, int fd)
 {
 	char	*gnlrow;
+
 	m->row = 0;
 	m->col = 0;
 	gnlrow = get_next_line(fd);

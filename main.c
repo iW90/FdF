@@ -6,61 +6,32 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 14:22:40 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:40:30 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
-	int			fd;
 	int			len;
 	int			ext;
 	t_mdata		mlxdata;
 	t_image		img;
 
-	/* Preenche as structs com zeros e nulls */
-	mlxdata = (t_mdata) {0};
-	img = (t_image) {0};
-	
-	/* Validação do nome do arquivo */
 	if (argc != 2)
 		print_error(22);
 	len = ft_strlen(argv[1]);
 	ext = ft_strncmp(&argv[1][len - 4], ".fdf", 5);
 	if (len < 5 || ext)
 		print_error(22);
-
-	/* Mapeando dimensões */
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		print_error(-1);
-	define_size(&mlxdata, fd);
-	fd = close(fd);
-
-	/* Clonando mapa */
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
-		print_error(-1);
-	map_creator(&mlxdata, fd);
-
-	/* Matrix */
-	mlxdata.zoom = WIN_HEIGHT / sqrt(pow(mlxdata.col, 2) + pow(mlxdata.row, 2));
-	fill_matrix(mlxdata.matrix, 1);
-	translation_matrix(mlxdata.matrix, mlxdata.row, mlxdata.col);
-	matrix_combinator(mlxdata.matrix, mlxdata.zoom);
-	apply_dot_prod(&mlxdata, mlxdata.matrix);
-	
-	fd = close(fd);
-
-	/* LBX */
+	mlxdata = (t_mdata){0};
+	img = (t_image){0};
 	mlxdata.image = &img;
+	map_maker(argv, &mlxdata);
+	matrix_maker(&mlxdata);
 	mlxconfig(&mlxdata);
-
-	/* Drawing */
-	
-	
 	return (0);
 }
 
+//norminette fdf_parser.c fdf_exit.c fdf_utils.c get_next_line.c get_next_line_utils.c fdf_window.c fdf_bresenham.c fdf_draw.c fdf_matrix.c fdf_matrix_utils.c fdf_makers.c main.c

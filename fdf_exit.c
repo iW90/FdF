@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:01:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 15:12:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:38:22 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	super_free(int coltofree, t_mdata *m, int errn)
 		print_error(errn);
 }
 
-// ENCERRAMENTO DO PRROGRAMA
+// ENCERRAMENTO DO PROGRAMA
 int	exit_fdf(t_mdata *m)
 {
 	mlx_destroy_image(m->mlxm, m->image->img);
