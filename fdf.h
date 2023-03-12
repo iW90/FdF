@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 19:02:01 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 10:50:28 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_mdata
 {
 	int				row;
 	int				col;
+	double			zoom;
 	void			*wind;
 	void			*mlxm;
 	double			matrix[4][4];
@@ -83,7 +84,7 @@ void	print_bresenham(t_mdata *m);
 
 void	mod_coord(t_mdata *m, double mtest[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
-void	concat_matrix(double res[4][4]);
+void	concat_matrix(double res[4][4], double scale);
 void	translation_matrix(double res[4][4], int row, int col);
 
 void	fill_matrix(double matrix[4][4], double n);

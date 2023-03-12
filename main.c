@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 16:09:57 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:01:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,19 @@ int	main(int argc, char *argv[])
 	define_size(&mlxdata, fd);
 	fd = close(fd);
 
+
 	/* Clonando mapa */
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		print_error(0);
-		
 	map_creator(&mlxdata, fd);
 
 	/* Matrix */
+	mlxdata.zoom = WIN_HEIGHT / sqrt(pow(mlxdata.col, 2) + pow(mlxdata.row, 2));
+	printf("Zoom: %f\n", mlxdata.zoom);
 	fill_matrix(mlxdata.matrix, 1);
 	translation_matrix(mlxdata.matrix, mlxdata.row, mlxdata.col);
-	concat_matrix(mlxdata.matrix);
+	concat_matrix(mlxdata.matrix, mlxdata.zoom);
 	mod_coord(&mlxdata, mlxdata.matrix);
 	
 	fd = close(fd);

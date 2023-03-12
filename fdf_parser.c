@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 18:55:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:03:36 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static int	define_width(char *strrow, t_mdata *m)
 void	define_size(t_mdata *m, int fd)
 {
 	char	*gnlrow;
-
 	m->row = 0;
 	m->col = 0;
 	gnlrow = get_next_line(fd);
@@ -126,51 +125,3 @@ void	map_creator(t_mdata *m, int fd)
 	}
 	populate_map(m, fd);
 }
-
-/*
-static void	get_data(char *strrow, t_mdata *m, int j)
-{
-	int		i;
-
-	i = 0;
-		while (i < m->col)
-		{
-			while (*strrow == ' ')
-				strrow++;
-			if (*strrow != '\n' || *strrow != '\0')
-			{
-				m->coord[i][j].coord[0] = i;
-				m->coord[i][j].coord[1] = j;
-				m->coord[i][j].coord[2] = ft_atoi_base(strrow, 10);
-				while (*strrow != ' ' && *strrow != ',' && \
-				*strrow != '\n' && *strrow != '\0')
-					strrow++;
-				if (*strrow == ',')
-				{
-					strrow = strrow + 3;
-					m->coord[i][j].color = ft_atoi_base(strrow, 16);
-					while (*strrow != ' ' && *strrow != '\n' && *strrow != '\0')
-						strrow++;
-				}
-				else
-					m->coord[i][j].color = 0;
-			}
-			i++;
-		}
-}
-
-static void	populate_map(t_mdata *m, int fd)
-{
-	int		j;
-	char	*strrow;
-
-	j = 0;
-	while (j < m->row)
-	{
-		strrow = get_next_line(fd);
-		get_data(strrow, m, j);
-		j++;
-		free(strrow);
-	}
-}
-*/
