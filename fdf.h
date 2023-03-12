@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 12:45:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 14:39:59 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ int		keyboard_commands(int nkey, t_mdata *m);
 
 void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	putpixel(t_mdata *m, int x, int y, int color);
-void	print_bresenham(t_mdata *m);
+void	print_lines(t_mdata *m);
 
-void	modifier_dot_prod(t_mdata *m, double mtest[4][4]);
+void	apply_dot_prod(t_mdata *m, double mtest[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
-void	concat_matrix(double res[4][4], double scale);
+void	matrix_combinator(double res[4][4], double scale);
 void	translation_matrix(double res[4][4], int row, int col);
 
 void	fill_matrix(double matrix[4][4], double n);
 void	copy_matrix(double srcm[4][4], double dstm[4][4]);
-void	multiply_matrix(double matA[4][4], double matB[4][4], double mProduct[4][4]);
+void	multiplier_matrix(double matA[4][4], double matB[4][4], double mProduct[4][4]);
 
 #endif

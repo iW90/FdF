@@ -6,55 +6,42 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 11:44:19 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 15:11:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
+// JANELA
+/* mlx_init: inicia a lbx
+ * mlx_new_window: criauma nova janela com as dimensões e nome definidos.
+ * mlx_new_image: inicia um espaço de desenho com as dimensões definidas.
+ * mlx_hook: função genérica para criar funcionalidades.
+ *   Fechar janela no botão X e pressionando ESC habilitados.
+ * mlx_get_data_addr: define o endereço e atributos da janela de desenho.
+ * print_lines: faz o desenho por Bresenham.
+ * mlx_put_image_to_window: imprime o desenho criado na janela.
+ * mlx_loop: mantém a janela funcionando sem erros.
+ */
 void	mlxconfig(t_mdata *m)
 {
 	m->mlxm = mlx_init();
-	//inicia lbx
-
 	m->wind = mlx_new_window(m->mlxm, WIN_WIDTH, WIN_HEIGHT, "FdF");
-	//cria janela
-
 	m->image->img = mlx_new_image(m->mlxm, WIN_WIDTH, WIN_HEIGHT);
-	//cria a caixinha de desenho
-
 	mlx_hook(m->wind, 17, 0, &exit_fdf, m);
-	//fechar no x
-
 	mlx_hook(m->wind, 2, 1L << 0, &keyboard_commands, m);
-	//fechar no esc
-
 	m->image->addr = mlx_get_data_addr(m->image->img, \
 	&m->image->bpp, &m->image->llen, &m->image->endian);
-	// endereço e atributos da janelinha
-
-	print_bresenham(m);
+	print_lines(m);
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 10, 10);
-	//coloca a imagem
-
 	mlx_loop(m->mlxm);
-	//mantém a tela ligada
 }
 
-int	exit_fdf(t_mdata *m)
-{
-	mlx_destroy_image(m->mlxm, m->image->img);
-	mlx_destroy_window(m->mlxm, m->wind);
-	mlx_destroy_display(m->mlxm);
-	super_free(m->col, m, 0);
-	free(m->mlxm);
-	exit(0);
-	return (0);
-}
-
+// ATALHOS DO TECLADO
+/* Se pressionado o botão ESC, o programa será encerrado.
+ */
 int	keyboard_commands(int nkey, t_mdata *m)
 {
-	printf("Key: %i\n", nkey);
 	if (nkey == ESC_KEY)
 		exit_fdf(m);
 	return (0);

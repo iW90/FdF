@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/11 09:56:22 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 13:41:09 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	putpixel(t_mdata *m, int x, int y, int color)
 	*(unsigned int *)brush = color;
 }
 
-void	print_bresenham(t_mdata *m)
+void	print_lines(t_mdata *m)
 {
 	int	i;
 	int	j;

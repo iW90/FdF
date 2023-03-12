@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/10 13:42:24 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 13:40:04 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
  * atender o grau de inclinação de um ângulo. Detalhado em:
  * https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
  */
-
 static void	delta_set(t_delta *d, t_coordinates *stt, t_coordinates *end)
 {
 	d->x0 = stt->coord[0];

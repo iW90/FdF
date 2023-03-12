@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:16:29 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 11:07:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 14:39:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	copy_matrix(double srcm[4][4], double dstm[4][4])
  * Multiplica-se cada linha por cada coluna
  * e são somados os produtos das multiplicações.
  */
-void	multiply_matrix(\
+void	multiplier_matrix(\
 double matA[4][4], double matB[4][4], double mProduct[4][4])
 {
 	int		i;

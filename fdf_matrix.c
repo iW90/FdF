@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 12:46:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/12 14:54:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
  * res[3][2] se refere ao eixo Z
  * res[2][2] se refere ao ajuste da escala de Z
  */
-void	translation_matrix(double res[4][4], int row, int col)
+void	translation_matrix(double mtrans[4][4], int row, int col)
 {
-	res[3][0] = row;
-	res[3][1] = -col;
-	res[3][2] = -5;
-	res[2][2] = 0.1;//coloca m->zoom pra testar
+	mtrans[3][0] = row;
+	mtrans[3][1] = -col;
+	mtrans[3][2] = -5;
+	mtrans[2][2] = 0.1;//coloca m->zoom pra testar
 }
 
 // ROTACIONA O MAPA: ROTAÇÃO
@@ -74,7 +74,7 @@ static void	dot_product(t_coordinates *c, double m[4][4])
 	c->coord[2] = temp[2];
 }
 
-void	modifier_dot_prod(t_mdata *m, double mtest[4][4])
+void	apply_dot_prod(t_mdata *m, double mtest[4][4])
 {
 	int		i;
 	int		j;
@@ -97,21 +97,21 @@ void	modifier_dot_prod(t_mdata *m, double mtest[4][4])
  * M_PI * 0.25 angulo de 45º
  * M_PI * 0.304 angulo de //54,736 //35,264 (arctg(30))
  */
-void	concat_matrix(double res[4][4], double scale)
+void	matrix_combinator(double mmatrix[4][4], double scale)
 {
-	double	mz[4][4];
-	double	rescopy[4][4];
+	double	mtemp[4][4];
+	double	mcopy[4][4];
 
-	copy_matrix(res, rescopy);
-	fill_matrix(mz, 1);
-	angulation_matrix(mz, M_PI * 0.25, 'z');
-	multiply_matrix(rescopy, mz, res);
-	copy_matrix(res, rescopy);
-	fill_matrix(mz, 1);
-	angulation_matrix(mz, M_PI * 0.304, 'x');
-	multiply_matrix(rescopy, mz, res);
-	copy_matrix(res, rescopy);
-	fill_matrix(mz, scale);
-	mz[3][3] = 1;
-	multiply_matrix(rescopy, mz, res);
+	copy_matrix(mmatrix, mcopy);
+	fill_matrix(mtemp, 1);
+	angulation_matrix(mtemp, M_PI * 0.25, 'z');
+	multiplier_matrix(mcopy, mtemp, mmatrix);
+	copy_matrix(mmatrix, mcopy);
+	fill_matrix(mtemp, 1);
+	angulation_matrix(mtemp, M_PI * 0.304, 'x');
+	multiplier_matrix(mcopy, mtemp, mmatrix);
+	copy_matrix(mmatrix, mcopy);
+	fill_matrix(mtemp, scale);
+	mtemp[3][3] = 1;
+	multiplier_matrix(mcopy, mtemp, mmatrix);
 }
