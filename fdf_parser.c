@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 17:35:03 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/13 20:17:13 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ static void	populate_map(t_mdata *m, int fd)
 		while (i < m->col)
 		{
 			dif += get_data(&strrow[dif], m, j, i);
+			get_average(m->coord[i][j].coord[2], m->zdata);
 			i++;
 		}
 		j++;

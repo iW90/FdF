@@ -6,11 +6,34 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 15:11:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:28:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+// ATALHOS DO TECLADO
+/* Se pressionado o botão ESC, o programa será encerrado.
+ */
+static int	keyboard_commands(int nkey, t_mdata *m)
+{
+	if (nkey == ESC_KEY)
+		exit_fdf(m);
+	return (0);
+}
+
+// ATALHO DO MOUSE
+/* nkey 4 = scroll para cima: zoom+
+ * nkey 5 = scroll para baixo: zoom-
+ */
+static int	mouse_click(int nkey, int x, int y, t_mdata *m)
+{
+	if (nkey == 4)
+		scaler(m, 1.1);
+	if (nkey == 5)
+		scaler(m, 0.9);
+	return (x + y);
+}
 
 // JANELA
 /* mlx_init: inicia a lbx
@@ -30,19 +53,10 @@ void	mlxconfig(t_mdata *m)
 	m->image->img = mlx_new_image(m->mlxm, WIN_WIDTH, WIN_HEIGHT);
 	mlx_hook(m->wind, 17, 0, &exit_fdf, m);
 	mlx_hook(m->wind, 2, 1L << 0, &keyboard_commands, m);
+	mlx_mouse_hook(m->wind, &mouse_click, m);
 	m->image->addr = mlx_get_data_addr(m->image->img, \
-	&m->image->bpp, &m->image->llen, &m->image->endian);
+		&m->image->bpp, &m->image->llen, &m->image->endian);
 	print_lines(m);
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 10, 10);
 	mlx_loop(m->mlxm);
-}
-
-// ATALHOS DO TECLADO
-/* Se pressionado o botão ESC, o programa será encerrado.
- */
-int	keyboard_commands(int nkey, t_mdata *m)
-{
-	if (nkey == ESC_KEY)
-		exit_fdf(m);
-	return (0);
 }

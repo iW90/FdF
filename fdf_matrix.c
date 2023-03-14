@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 20:36:58 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:53:03 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
  */
 void	translation_matrix(double mtrans[4][4], int row, int col)
 {
-	mtrans[3][0] = row;
-	mtrans[3][1] = -col;
-	mtrans[3][2] = -5;
+	mtrans[3][0] = row/2;
+	mtrans[3][1] = -col/2;
+	//mtrans[3][2] = 0;
 	mtrans[2][2] = 0.05;
 }
 
@@ -74,7 +74,7 @@ static void	dot_product(t_coordinates *c, double m[4][4])
 	c->coord[2] = temp[2];
 }
 
-void	apply_dot_prod(t_mdata *m, double mtest[4][4])
+void	apply_dot_prod(t_mdata *m, double matrix[4][4])
 {
 	int		i;
 	int		j;
@@ -85,7 +85,7 @@ void	apply_dot_prod(t_mdata *m, double mtest[4][4])
 		j = 0;
 		while (j < m->row)
 		{
-			dot_product(&m->coord[i][j], mtest);
+			dot_product(&m->coord[i][j], matrix);
 			j++;
 		}
 		i++;

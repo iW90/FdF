@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 19:27:53 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:32:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_image
 typedef struct s_coordinates
 {
 	double	coord[3];
-	int		z;
+	//int		z;
 	int		color;
 }	t_coordinates;
 
@@ -48,6 +48,7 @@ typedef struct s_mdata
 	void			*wind;
 	void			*mlxm;
 	double			matrix[4][4];
+	int				zdata[3];
 	t_image			*image;
 
 	t_coordinates	**coord;
@@ -76,13 +77,12 @@ void	print_error(int errn);
 
 void	mlxconfig(t_mdata *m);
 int		exit_fdf(t_mdata *m);
-int		keyboard_commands(int nkey, t_mdata *m);
 
 void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	put_pixel(t_mdata *m, int x, int y, int color);
 void	print_lines(t_mdata *m);
 
-void	apply_dot_prod(t_mdata *m, double mtest[4][4]);
+void	apply_dot_prod(t_mdata *m, double matrix[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
 void	matrix_combinator(double res[4][4], double scale);
 void	translation_matrix(double res[4][4], int row, int col);
@@ -93,5 +93,8 @@ void	multiplier_matrix(double matA[4][4], double matB[4][4], double mProduct[4][
 
 void	map_maker(char **argv, t_mdata *mlxdata);
 void	matrix_maker(t_mdata *mlxdata);
+
+void	get_average(double zcoord, int zdata[3]);
+void	scaler(t_mdata *m, double scale);
 
 #endif
