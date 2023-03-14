@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 18:06:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:00:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ void	matrix_maker(t_mdata *mlxdata);
 
 void	scaler(t_mdata *m, double scale);
 void	move_map(t_mdata *m, int width, int height);
-void	reset_coords(t_coordinates **coord, int row, int col);
 void	reset_map(t_mdata *m);
 
 #endif

@@ -6,12 +6,13 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 17:33:05 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:06:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
+// ZOOM
 void	scaler(t_mdata *m, double scale)
 {
 	double	matrix[4][4];
@@ -21,6 +22,7 @@ void	scaler(t_mdata *m, double scale)
 	redraw(m);
 }
 
+// MOVIMENTAÇÃO DO MAPA HORIZONTAL E VERTICALMENTE
 void	move_map(t_mdata *m, int width, int height)
 {
 	m->mov[0] += width;
@@ -28,7 +30,15 @@ void	move_map(t_mdata *m, int width, int height)
 	redraw(m);
 }
 
-void	reset_coords(t_coordinates **coord, int row, int col)
+// RESETAR MAPA
+/* Redefinição dos valores para que a imagem volte ao ponto inicial.
+ * Necessário redefinir as coordenas que saíram do lugar após a movimentação
+ * e reatribuir o valor inicial da coordenada Z. Lembrando que:
+ * coord[0] = x (largura/colunas)
+ * coord[1] = y (altura/linhas)
+ * coord[2] = z (relevo/depressão do mapa)
+ */
+static void	reset_coords(t_coordinates **coord, int row, int col)
 {
 	int	i;
 	int	j;

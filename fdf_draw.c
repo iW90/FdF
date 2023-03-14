@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 18:43:02 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:52:48 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ void	redraw(t_mdata *m)
 
 void	menu(t_mdata *m)
 {
-	//mlx_string_put(m->mlxm, m->wind, 10, 530, 0xffffff, "\n");
-
 	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 110, 0x999999, "+-----------------------------+");
 	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 100, 0x999999, "|             MENU            |");
 	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 90, 0x999999, "+-----------------------------+");

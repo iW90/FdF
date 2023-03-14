@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 12:48:33 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:07:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ void	define_size(t_mdata *m, int fd)
 // PARSEADOR
 /* Com a largura e a altura já definidas, o parseador percorre novamente
  * o mapa, dessa vez coletando as informações e atribuindo às posições
- * alocadas na memória.
+ * alocadas na memória. Considerando que:
+ * coord[0] = x (largura/colunas)
+ * coord[1] = y (altura/linhas)
+ * coord[2] = z (relevo/depressão do mapa)
+ * coord.z = backup de Z que não deve ser alterado
  */
 static int	get_data(char *strrow, t_mdata *m, int j, int i)
 {

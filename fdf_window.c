@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 18:42:00 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:59:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
  */
 static int	keyboard_commands(int nkey, t_mdata *m)
 {
-	//printf("nkey: %i\n", nkey);
 	if (nkey == ESC_KEY)
 		exit_fdf(m);
 	if (nkey == LEFT_KEY)
@@ -34,16 +33,18 @@ static int	keyboard_commands(int nkey, t_mdata *m)
 }
 
 // ATALHO DO MOUSE
-/* nkey 4 = scroll para cima: zoom+
+/* nkey 1 = left click
+ * nkey 3 = right click
+ * nkey 4 = scroll para cima: zoom+
  * nkey 5 = scroll para baixo: zoom-
  */
 static int	mouse_click(int nkey, int x, int y, t_mdata *m)
 {
+	//printf("nkey: %i\nX: %i\nY: %i\n", nkey, x, y);
 	/*
-	printf("nkey: %i\n", nkey);
 	if (nkey == 1)
 		rotate(m, );
-	if (nkey == 2)
+	if (nkey == 3)
 		rotate(m, );
 	*/
 	if (nkey == 4)
