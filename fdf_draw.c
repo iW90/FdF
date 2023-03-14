@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:21:06 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:43:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,22 @@ void	redraw(t_mdata *m)
 	clear_board(m);
 	print_lines(m);
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 0, 0);
+	menu(m);
+}
+
+void	menu(t_mdata *m)
+{
+	//mlx_string_put(m->mlxm, m->wind, 10, 530, 0xffffff, "\n");
+
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 110, 0x999999, "+-----------------------------+");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 100, 0x999999, "|             MENU            |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 90, 0x999999, "+-----------------------------+");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 80, 0x999999, "| Zoom:        Mouse scroll   |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 70, 0x999999, "| Movement:    Arrow Keyboard |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 60, 0x999999, "| Z axis:      +/- Keyboard   |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 50, 0x999999, "+-----------------------------+");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 40, 0x999999, "|   Click on axis to rotate   |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 30, 0xdddddd, "+---------+---------+---------+");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 20, 0xdddddd, "|    X    |    Y    |    Z    |");
+	mlx_string_put(m->mlxm, m->wind, 10, WIN_HEIGHT - 10, 0xdddddd, "+---------+---------+---------+");
 }

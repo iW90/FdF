@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:24:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:42:00 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  */
 static int	keyboard_commands(int nkey, t_mdata *m)
 {
-	printf("nkey: %i\n", nkey);
+	//printf("nkey: %i\n", nkey);
 	if (nkey == ESC_KEY)
 		exit_fdf(m);
 	if (nkey == LEFT_KEY)
@@ -39,6 +39,13 @@ static int	keyboard_commands(int nkey, t_mdata *m)
  */
 static int	mouse_click(int nkey, int x, int y, t_mdata *m)
 {
+	/*
+	printf("nkey: %i\n", nkey);
+	if (nkey == 1)
+		rotate(m, );
+	if (nkey == 2)
+		rotate(m, );
+	*/
 	if (nkey == 4)
 		scaler(m, 1.1);
 	if (nkey == 5)
@@ -69,5 +76,6 @@ void	mlxconfig(t_mdata *m)
 		&m->image->bpp, &m->image->llen, &m->image->endian);
 	print_lines(m);
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 0, 0);
+	menu(m);
 	mlx_loop(m->mlxm);
 }

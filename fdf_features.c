@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_zoom.c                                         :+:      :+:    :+:   */
+/*   fdf_features.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:33:29 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:33:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	scaler(t_mdata *m, double scale)
 	fill_matrix(matrix, scale);
 	apply_dot_prod(m, matrix);
 	redraw(m);
-	//mlx_string_put(m->mlxm, m->wind, 10, 530, 0xffffff, "MENU ROW NO SEU COL");
 }
 
 void	move_map(t_mdata *m, int width, int height)

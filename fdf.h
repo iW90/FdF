@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:29:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:06:27 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	put_pixel(t_mdata *m, int x, int y, int color);
 void	print_lines(t_mdata *m);
 void	redraw(t_mdata *m);
+void	menu(t_mdata *m);
 
 void	apply_dot_prod(t_mdata *m, double matrix[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
