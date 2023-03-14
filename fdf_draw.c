@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 15:18:17 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:04:49 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,27 @@ void	print_lines(t_mdata *m)
 		}
 		i++;
 	}
+}
+
+static void	clear_board(t_mdata *m)
+{
+	char	*eraser;
+	int		i;
+
+	eraser = m->image->addr;
+	i = 0;
+	while (i < WIN_HEIGHT * m->image->llen)
+	{
+		eraser[i] = 0;
+		i++;
+	}
+}
+
+void	redraw(t_mdata *m)
+{
+	clear_board(m);
+	print_lines(m);
+	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 0, 0);
 }
 
 // FUNÇÃO PARA DESENHAR DIRETO NA JANELA 

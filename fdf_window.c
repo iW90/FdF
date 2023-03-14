@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/13 22:15:42 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:15:31 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,19 @@
  */
 static int	keyboard_commands(int nkey, t_mdata *m)
 {
+	printf("nkey: %i\n", nkey);
 	if (nkey == ESC_KEY)
 		exit_fdf(m);
+	if (nkey == LEFT_KEY)
+		move_map(m, -24, 0);
+	if (nkey == RIGHT_KEY)
+		move_map(m, 24, 0);
+	if (nkey == UP_KEY)
+		move_map(m, 0, -24);
+	if (nkey == DOWN_KEY)
+		move_map(m, 0, 24);
+	if (nkey == BACK_KEY)
+		reset_map(m);
 	return (0);
 }
 
@@ -32,6 +43,7 @@ static int	mouse_click(int nkey, int x, int y, t_mdata *m)
 		scaler(m, 1.1);
 	if (nkey == 5)
 		scaler(m, 0.9);
+	//printf("x %i\ny %i\n", x, y);
 	return (x + y);
 }
 

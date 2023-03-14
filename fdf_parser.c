@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/13 20:17:13 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:48:33 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,10 @@ static int	get_data(char *strrow, t_mdata *m, int j, int i)
 		strrow++;
 	if (*strrow != '\n' || *strrow != '\0')
 	{
+		m->coord[i][j].z = ft_atoi_base(strrow, 10);
 		m->coord[i][j].coord[0] = i;
 		m->coord[i][j].coord[1] = j;
-		m->coord[i][j].coord[2] = ft_atoi_base(strrow, 10);
+		m->coord[i][j].coord[2] = m->coord[i][j].z;
 		while (*strrow != ' ' && *strrow != ',' \
 		&& *strrow != '\n' && *strrow != '\0')
 			strrow++;
@@ -102,7 +103,6 @@ static void	populate_map(t_mdata *m, int fd)
 		while (i < m->col)
 		{
 			dif += get_data(&strrow[dif], m, j, i);
-			get_average(m->coord[i][j].coord[2], m->zdata);
 			i++;
 		}
 		j++;

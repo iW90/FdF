@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/13 21:32:20 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:10:02 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@
 # include "get_next_line.h"
 
 #  define ESC_KEY 65307
+#  define LEFT_KEY 65361
+#  define UP_KEY 65362
+#  define RIGHT_KEY 65363
+#  define MORE_KEY 65451
+#  define LESS_KEY 65453
+#  define DOWN_KEY 65364
+#  define BACK_KEY 65288
 #  define WIN_WIDTH 1920 /2
 #  define WIN_HEIGHT 1080 /2
 
@@ -36,7 +43,7 @@ typedef struct s_image
 typedef struct s_coordinates
 {
 	double	coord[3];
-	//int		z;
+	int		z;
 	int		color;
 }	t_coordinates;
 
@@ -48,7 +55,10 @@ typedef struct s_mdata
 	void			*wind;
 	void			*mlxm;
 	double			matrix[4][4];
-	int				zdata[3];
+	int				zhigher;
+	int				zlower;
+	int				ud;
+	int				lr;
 	t_image			*image;
 
 	t_coordinates	**coord;
@@ -81,6 +91,7 @@ int		exit_fdf(t_mdata *m);
 void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
 void	put_pixel(t_mdata *m, int x, int y, int color);
 void	print_lines(t_mdata *m);
+void	redraw(t_mdata *m);
 
 void	apply_dot_prod(t_mdata *m, double matrix[4][4]);
 void	angulation_matrix(double mat[4][4], double rad, char axis);
@@ -94,7 +105,9 @@ void	multiplier_matrix(double matA[4][4], double matB[4][4], double mProduct[4][
 void	map_maker(char **argv, t_mdata *mlxdata);
 void	matrix_maker(t_mdata *mlxdata);
 
-void	get_average(double zcoord, int zdata[3]);
 void	scaler(t_mdata *m, double scale);
+void	move_map(t_mdata *m, int width, int height);
+void	reset_coords(t_coordinates **coord, int row, int col);
+void	reset_map(t_mdata *m);
 
 #endif

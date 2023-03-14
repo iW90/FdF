@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/13 22:12:30 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:36:07 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
  * atender o grau de inclinação de um ângulo. Detalhado em:
  * https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
  */
-static void	delta_set(t_delta *d, t_coordinates *stt, t_coordinates *end)
+static void	delta_set(int ud, int lr, t_delta *d, \
+	t_coordinates *stt, t_coordinates *end)
 {
-	d->x0 = stt->coord[0] + WIN_WIDTH/2;
-	d->x1 = end->coord[0] + WIN_WIDTH/2;
-	d->y0 = stt->coord[1] + WIN_HEIGHT/2;
-	d->y1 = end->coord[1] + WIN_HEIGHT/2;
+	d->x0 = stt->coord[0] + WIN_WIDTH/2 + lr;
+	d->x1 = end->coord[0] + WIN_WIDTH/2 + lr;
+	d->y0 = stt->coord[1] + WIN_HEIGHT/2 + ud;
+	d->y1 = end->coord[1] + WIN_HEIGHT/2 + ud;
 	d->dx = d->x1 - d->x0;
 	d->dy = d->y1 - d->y0;
 }
@@ -105,7 +106,7 @@ void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end)
 {
 	t_delta	d;
 
-	delta_set(&d, stt, end);
+	delta_set(m->ud, m->lr, &d, stt, end);
 	if (abs(d.y1 - d.y0) < abs(d.x1 - d.x0))
 	{
 		if (d.x0 > d.x1)
