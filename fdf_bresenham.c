@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:35:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:09:26 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  * https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
  */
 
-/* mov[0] - Movimentação no eixo X
- * mov[1] - Movimentação no eixo Y
-*/
+/* mov[0] - Deslocamento no eixo X
+ * mov[1] - Deslocamento no eixo Y
+ */
 static void	delta_set(int mov[2], t_delta *d, \
 	t_coordinates *stt, t_coordinates *end)
 {

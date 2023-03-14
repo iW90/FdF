@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 19:06:07 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:08:45 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	move_map(t_mdata *m, int width, int height)
  * coord[0] = x (largura/colunas)
  * coord[1] = y (altura/linhas)
  * coord[2] = z (relevo/depressão do mapa)
+ * m->mov[0] = deslocamento horizontal
+ * m->mov[1] = deslocamento vertical
  */
 static void	reset_coords(t_coordinates **coord, int row, int col)
 {
