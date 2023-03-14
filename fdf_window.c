@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 13:15:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:24:32 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static int	mouse_click(int nkey, int x, int y, t_mdata *m)
 		scaler(m, 1.1);
 	if (nkey == 5)
 		scaler(m, 0.9);
-	//printf("x %i\ny %i\n", x, y);
 	return (x + y);
 }
 

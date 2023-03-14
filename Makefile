@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/13 21:31:12 by inwagner         ###   ########.fr        #
+#    Updated: 2023/03/14 14:34:03 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ FTS		=	get_next_line.c \
 			fdf_window.c \
 			fdf_bresenham.c \
 			fdf_draw.c \
-			fdf_zoom.c \
+			fdf_features.c \
 
 all:
 	cc ${CFLAG} ${HDR} ${FTS} ${LBX} ${MFLAG} -g -o ${NAME}

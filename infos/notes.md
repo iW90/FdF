@@ -24,3 +24,31 @@ void	printmap(t_mdata *ms)
 	}
 }
 ```
+
+## Função para desenhar direto na janela
+
+* NÃO PERMITIDO NESSE PROJETO
+
+```c
+void	paint(t_mdata *m)
+{
+	int	x;
+	int	y;
+	int	color;
+
+	x = 150;
+	color = 0xFF0000;
+
+	while (x < 156)
+	{
+		y = 0;
+		
+		while (y < 200)
+		{
+			putpixel(m, x, y, color);
+			y++;
+		}
+		x++;
+	}
+}
+```

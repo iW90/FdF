@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 13:04:49 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:21:06 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,3 @@ void	redraw(t_mdata *m)
 	print_lines(m);
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 0, 0);
 }
-
-// FUNÇÃO PARA DESENHAR DIRETO NA JANELA 
-// (NÃO PERMITIDO NESSE PROJETO)
-/*
-void	paint(t_mdata *m)
-{
-	int	x;
-	int	y;
-	int	color;
-
-	x = 150;
-	color = 0xFF0000;
-
-	while (x < 156)
-	{
-		y = 0;
-		
-		while (y < 200)
-		{
-			putpixel(m, x, y, color);
-			y++;
-		}
-		x++;
-	}
-}
-*/
