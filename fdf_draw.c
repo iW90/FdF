@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 19:10:59 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:22:40 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	put_pixel(t_mdata *m, int x, int y, int color)
 {
 	char	*brush;
 
-	if (y > WIN_HEIGHT - 15 || y < 0 || x > m->image->llen || x < 0)
+	if (y > WIN_HEIGHT - 5 || y < 5 || x > m->image->llen || x < 5)
 		return ;
 	if (!color)
 		color = 0xFFFFFF;

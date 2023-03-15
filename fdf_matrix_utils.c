@@ -6,9 +6,11 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:16:29 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/12 14:39:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:29:29 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "fdf.h"
 
 // PREENCHEDOR DE MATRIZ IDENTIDADE
 /* Matriz identidade possui todos os seus índices da diagonal principal

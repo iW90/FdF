@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 14:23:38 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:03:57 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	translation_matrix(double mtrans[4][4], int row, int col)
 	mtrans[3][0] = row / 2;
 	mtrans[3][1] = col / 2;
 	mtrans[3][2] = (row + col) / 2;
-	//mtrans[2][2] = 0.05;
 }
 
 // ROTACIONA O MAPA: ROTAÇÃO

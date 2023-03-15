@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:53:04 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 19:00:12 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:37:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	super_free(int rowtofree, t_mdata *m, int errn);
 void	print_error(int errn);
 
 void	mlxconfig(t_mdata *m);
+void	reset_coords(t_coordinates **coord, int row, int col, double mod);
+void	reset_map(t_mdata *m);
 int		exit_fdf(t_mdata *m);
 
 void	plot_line(t_mdata *m, t_coordinates *stt, t_coordinates *end);
@@ -105,8 +107,9 @@ void	multiplier_matrix(double matA[4][4], \
 void	map_maker(char **argv, t_mdata *mlxdata);
 void	matrix_maker(t_mdata *mlxdata);
 
-void	scaler(t_mdata *m, double scale);
+void	zoom_map(t_mdata *m, double scale);
 void	move_map(t_mdata *m, int width, int height);
-void	reset_map(t_mdata *m);
+void	rotate_map(t_mdata *m, int signal, int x, int y);
+void	z_scaler(t_mdata *m, char button);
 
 #endif

@@ -6,14 +6,16 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 19:08:45 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:29:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
+
+
 // ZOOM
-void	scaler(t_mdata *m, double scale)
+void	zoom_map(t_mdata *m, double scale)
 {
 	double	matrix[4][4];
 
@@ -30,41 +32,44 @@ void	move_map(t_mdata *m, int width, int height)
 	redraw(m);
 }
 
-// RESETAR MAPA
-/* Redefinição dos valores para que a imagem volte ao ponto inicial.
- * Necessário redefinir as coordenas que saíram do lugar após a movimentação
- * e reatribuir o valor inicial da coordenada Z. Lembrando que:
- * coord[0] = x (largura/colunas)
- * coord[1] = y (altura/linhas)
- * coord[2] = z (relevo/depressão do mapa)
- * m->mov[0] = deslocamento horizontal
- * m->mov[1] = deslocamento vertical
- */
-static void	reset_coords(t_coordinates **coord, int row, int col)
+// ROTAÇÃO (EIXOS X, Y OU Z)
+void	rotate_map(t_mdata *m, int signal, int x, int y)
 {
-	int	i;
-	int	j;
+	char	axis;
+	double matrix[4][4];
 
-	i = 0;
-	while (i < col)
-	{
-		j = 0;
-		while (j < row)
-		{
-			coord[i][j].coord[0] = i;
-			coord[i][j].coord[1] = j;
-			coord[i][j].coord[2] = coord[i][j].z;
-			j++;
-		}
-		i++;
-	}
+	if (x > 13 && x < 73 \
+		&& y < WIN_HEIGHT - 14 && y > WIN_HEIGHT - 35)
+		axis = 'x';
+	if (x > 73 && x < 133 \
+		&& y < WIN_HEIGHT - 14 && y > WIN_HEIGHT - 35)
+		axis = 'y';
+	if (x > 133 && x < 193 \
+		&& y < WIN_HEIGHT - 14 && y > WIN_HEIGHT - 35)
+		axis = 'z';
+	fill_matrix(matrix, 1);
+	angulation_matrix(matrix, signal * M_PI / 12, axis);
+	apply_dot_prod(m, matrix);
+	redraw(m);
 }
 
-void	reset_map(t_mdata *m)
+// Z SCALER
+void	z_scaler(t_mdata *m, char button)
 {
-	m->mov[0] = 0;
-	m->mov[1] = 0;
-	reset_coords(m->coord, m->row, m->col);
-	matrix_maker(m);
+	static double zscale;
+	
+	if (!zscale)
+		zscale = 1;
+	if (button == '+')
+		zscale += 0.05;
+	if (button == '-')
+		zscale -= 0.05;
+	if (button == 'r')
+	{
+		zscale = 1;
+		return ;
+	}
+	reset_coords(m->coord, m->row, m->col, zscale);
+	apply_dot_prod(m, m->matrix);
 	redraw(m);
 }

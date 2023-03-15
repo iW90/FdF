@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 18:59:31 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:34:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ static int	keyboard_commands(int nkey, t_mdata *m)
 		move_map(m, 0, 24);
 	if (nkey == BACK_KEY)
 		reset_map(m);
+	if (nkey == MORE_KEY)
+		z_scaler(m, '+');
+	if (nkey == LESS_KEY)
+		z_scaler(m, '-');
 	return (0);
 }
 
@@ -40,17 +44,14 @@ static int	keyboard_commands(int nkey, t_mdata *m)
  */
 static int	mouse_click(int nkey, int x, int y, t_mdata *m)
 {
-	//printf("nkey: %i\nX: %i\nY: %i\n", nkey, x, y);
-	/*
 	if (nkey == 1)
-		rotate(m, );
+		rotate_map(m, -1, x, y);
 	if (nkey == 3)
-		rotate(m, );
-	*/
+		rotate_map(m, 1, x, y);
 	if (nkey == 4)
-		scaler(m, 1.1);
+		zoom_map(m, 1.1);
 	if (nkey == 5)
-		scaler(m, 0.9);
+		zoom_map(m, 0.9);
 	return (x + y);
 }
 
@@ -79,4 +80,44 @@ void	mlxconfig(t_mdata *m)
 	mlx_put_image_to_window(m->mlxm, m->wind, m->image->img, 0, 0);
 	menu(m);
 	mlx_loop(m->mlxm);
+}
+
+// RESET
+/* Redefinição dos valores para que a imagem volte ao ponto inicial.
+ * Necessário redefinir as coordenas que saíram do lugar após a movimentação
+ * e reatribuir o valor inicial da coordenada Z. Lembrando que:
+ * coord[0] = x (largura/colunas)
+ * coord[1] = y (altura/linhas)
+ * coord[2] = z (relevo/depressão do mapa)
+ * m->mov[0] = deslocamento horizontal
+ * m->mov[1] = deslocamento vertical
+ */
+void	reset_coords(t_coordinates **coord, int row, int col, double mod)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < col)
+	{
+		j = 0;
+		while (j < row)
+		{
+			coord[i][j].coord[0] = i;
+			coord[i][j].coord[1] = j;
+			coord[i][j].coord[2] = coord[i][j].z * mod;
+			j++;
+		}
+		i++;
+	}
+}
+
+void	reset_map(t_mdata *m)
+{
+	m->mov[0] = 0;
+	m->mov[1] = 0;
+	z_scaler(m, 'r');
+	reset_coords(m->coord, m->row, m->col, 1);
+	matrix_maker(m);
+	redraw(m);
 }

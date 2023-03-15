@@ -6,7 +6,7 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 19:09:26 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:27:46 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
  * https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
  */
 
-/* mov[0] - Deslocamento no eixo X
- * mov[1] - Deslocamento no eixo Y
+/* As condicionais servem para limitar a janela e impedir que o desenho
+ * apareça na margem oposta.
+ * mov[0] = Deslocamento no eixo X
+ * mov[1] = Deslocamento no eixo Y
  */
 static void	delta_set(int mov[2], t_delta *d, \
 	t_coordinates *stt, t_coordinates *end)
@@ -29,6 +31,22 @@ static void	delta_set(int mov[2], t_delta *d, \
 	d->x1 = end->coord[0] + WIN_WIDTH / 2 + mov[0];
 	d->y0 = stt->coord[1] + WIN_HEIGHT / 2 + mov[1];
 	d->y1 = end->coord[1] + WIN_HEIGHT / 2 + mov[1];
+	if (d->x0 < 0)
+		d->x0 = 0;
+	if (d->x0 >= WIN_WIDTH)
+		d->x0 = WIN_WIDTH - 1;
+	if (d->y0 < 0)
+		d->y0 = 0;
+	if (d->y0 >= WIN_HEIGHT)
+		d->y0 = WIN_HEIGHT - 1;
+	if (d->x1 < 0)
+		d->x1 = 0;
+	if (d->x1 >= WIN_WIDTH)
+		d->x1 = WIN_WIDTH - 1;
+	if (d->y1 < 0)
+		d->y1 = 0;
+	if (d->y1 >= WIN_HEIGHT)
+		d->y1 = WIN_HEIGHT - 1;
 	d->dx = d->x1 - d->x0;
 	d->dy = d->y1 - d->y0;
 }
