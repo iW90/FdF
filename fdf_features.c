@@ -6,13 +6,11 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/14 21:29:11 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:42:23 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-
 
 // ZOOM
 void	zoom_map(t_mdata *m, double scale)
@@ -36,7 +34,7 @@ void	move_map(t_mdata *m, int width, int height)
 void	rotate_map(t_mdata *m, int signal, int x, int y)
 {
 	char	axis;
-	double matrix[4][4];
+	double	matrix[4][4];
 
 	if (x > 13 && x < 73 \
 		&& y < WIN_HEIGHT - 14 && y > WIN_HEIGHT - 35)
@@ -56,8 +54,8 @@ void	rotate_map(t_mdata *m, int signal, int x, int y)
 // Z SCALER
 void	z_scaler(t_mdata *m, char button)
 {
-	static double zscale;
-	
+	static double	zscale;
+
 	if (!zscale)
 		zscale = 1;
 	if (button == '+')
