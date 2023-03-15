@@ -6,11 +6,11 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:08:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:50:16 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:53:10 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../../includes/get_next_line.h"
 
 size_t	ft_strlen(const char *src)
 {

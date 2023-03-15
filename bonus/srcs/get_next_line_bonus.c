@@ -6,11 +6,11 @@
 /*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:09:18 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:50:25 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:53:16 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/get_next_line.h"
+#include "../../includes/get_next_line.h"
 
 char	*get_next_line(int fd)
 {
