@@ -72,3 +72,7 @@ void	paint(t_mdata *m)
 ## Norminette
 
 `norminette fdf_bresenham.c fdf_draw.c fdf_exit.c fdf_features.c fdf_makers.c fdf_matrix_utils.c fdf_matrix.c fdf_parser.c fdf_utils.c fdf_window.c get_next_line.c get_next_line_utils.c main.c`
+
+## Valgrind
+
+`@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./fdf ./maps/pyramide.fdf`
