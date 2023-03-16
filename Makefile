@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/15 20:56:16 by inwagner         ###   ########.fr        #
+#    Updated: 2023/03/15 21:12:21 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,18 +75,12 @@ makefdfbonus: mdir
 	@cc $(CFLAG) -c ./bonus/srcs/$(BNAME).c $(HDR) -o ./objs/$(BNAME).o
 	
 clean:
-	@[ -d ./objs ] && rm -rf ./objs || echo Object directory doesn\'t exist
+	@[ -d ./objs ] && rm -rf ./objs || [ -f Makefile ]
 
 fclean: clean
-	@[ -f ./fdf ] && rm fdf && echo fdf cleaned || echo Program fdf isn\'t compiled
-	@[ -f ./fdf_bonus ] && rm fdf_bonus && echo bonus cleaned || echo Bonus fdf isn\'t compiled
+	@[ -f ./fdf ] && rm fdf && echo FdF cleaned ||  [ -f Makefile ]
+	@[ -f ./fdf_bonus ] && rm fdf_bonus && echo FdF Bonus cleaned || [ -f Makefile ]
 
 re: fclean all
 
-val:
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=teste -s ./fdf
-
-valbonus:
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --log-file=teste -s ./fdf_bonus
-
-.PHONY: all mdir makefdf bonus clean fclean re val valbonus
+.PHONY: all mdir makefdf bonus clean fclean re
