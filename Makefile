@@ -6,21 +6,26 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/15 21:17:09 by inwagner         ###   ########.fr        #
+#    Updated: 2023/03/17 19:49:50 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	fdf
-BNAME	=	fdf_bonus
+NAME	:=	fdf
+BNAME	:=	fdf_bonus
 
-HDR		=	-I ./includes/
-CFLAG	=	-Wall -Werror -Wextra
-MFLAG	=	-lbsd -lmlx -lXext -lX11 -lm
-LBX		=	/usr/local/lib/libmlx.a
+HDR		:=	-I ./includes/
+CFLAG	:=	-Wall -Werror -Wextra
+MFLAG	:=	-lbsd -lmlx -lXext -lX11 -lm
+
+# PATHS
+SRC		:=	./srcs/
+OSRC	:=	./objs/
+GSRC	:=	./srcs/gnl/
+BSRC	:=	./srcs/bonus/
 
 # MANDATORY
-SRC		=	./srcs/
-FTS		=	fdf_utils.c \
+FTS		:=	fdf.c \
+			fdf_utils.c \
 			fdf_makers.c \
 			fdf_parser.c \
 			fdf_exit.c \
@@ -28,52 +33,46 @@ FTS		=	fdf_utils.c \
 			fdf_matrix_utils.c \
 			fdf_window.c \
 			fdf_bresenham.c \
-			fdf_draw.c \
-			get_next_line_utils.c \
-			get_next_line.c
-OBJ		=	$(FTS:.c=.o)
+			fdf_draw.c
+OBJ		:=	$(FTS:%.c=./objs/%.o)
+
+# GNL
+GFTS	:=	get_next_line.c \
+			get_next_line_utils.c
+GOBJ	:=	$(GFTS:%.c=./objs/%.o)
 
 # BONUS
-BSRC	=	./bonus/srcs/
-BFTS	=	fdf_utils_bonus.c \
-			fdf_makers_bonus.c \
-			fdf_parser_bonus.c \
-			fdf_exit_bonus.c \
-			fdf_matrix_bonus.c \
-			fdf_matrix_utils_bonus.c \
-			fdf_window_bonus.c \
-			fdf_bresenham_bonus.c \
+BFTS	:=	fdf_bonus.c \
 			fdf_draw_bonus.c \
 			fdf_features_bonus.c \
-			get_next_line_utils_bonus.c \
-			get_next_line_bonus.c
-BOBJ	=	$(BFTS:.c=.o)
+			fdf_window_bonus.c
+BOBJ	:=	$(BFTS:%.c=./objs/%.o) \
+			$(filter-out $(OSRC)fdf.o $(OSRC)fdf_draw.o $(OSRC)fdf_window.o, $(OBJ))
 
-all: $(NAME)
+all: makedir $(NAME)
 
-$(NAME): makefdf $(OBJ)
-	@cc $(CFLAG) $(HDR) ./objs/$(NAME).o $(addprefix ./objs/, ${FTS:.c=.o}) $(MFLAG) -o fdf
+bonus: makedir $(BNAME)
 
-$(OBJ):
-	@cc $(CFLAG) -c ./srcs/$(@:.o=.c) $(HDR) -o ./objs/$@
+# Compile objects together
+$(NAME): $(GOBJ) $(OBJ)
+	@cc $(CFLAG) $(GOBJ) $(OBJ) $(MFLAG) -o $@
 
-makefdf: mdir
-	@cc $(CFLAG) -c ./srcs/$(NAME).c $(HDR) -o ./objs/$(NAME).o
+$(BNAME): $(GOBJ) $(BOBJ)
+	@cc $(CFLAG) $(GOBJ) $(BOBJ) $(MFLAG) -o $@
 
-mdir:
+# Make Objects
+makedir:
 	@mkdir -p objs
 
-bonus: clean $(BNAME)
+$(OSRC)%.o: $(GSRC)%.c
+	@cc $(CFLAG) $(HDR) $(MFLAG) -c $< -o $@
 
-$(BNAME): makefdfbonus $(BOBJ)
-	@cc $(CFLAG) $(HDR) ./objs/$(BNAME).o $(addprefix ./objs/, ${BFTS:.c=.o}) $(MFLAG) -o fdf_bonus
+$(OSRC)%.o: $(SRC)%.c
+	@cc $(CFLAG) $(HDR) $(MFLAG) -c $< -o $@
 
-$(BOBJ):
-	@cc $(CFLAG) -c ./bonus/srcs/$(@:.o=.c) $(HDR) -o ./objs/$@
+$(OSRC)%.o: $(BSRC)%.c
+	@cc $(CFLAG) $(HDR) $(MFLAG) -c $< -o $@
 
-makefdfbonus: mdir
-	@cc $(CFLAG) -c ./bonus/srcs/$(BNAME).c $(HDR) -o ./objs/$(BNAME).o
-	
 clean:
 	@[ -d ./objs ] && rm -rf ./objs || [ -f Makefile ]
 
