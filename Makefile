@@ -6,7 +6,7 @@
 #    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/17 19:49:50 by inwagner         ###   ########.fr        #
+#    Updated: 2023/03/17 19:59:13 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,4 +82,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all mdir makefdf bonus clean fclean re
+.PHONY: all makedir bonus clean fclean re
