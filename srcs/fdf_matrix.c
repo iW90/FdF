@@ -13,7 +13,10 @@
 #include "../includes/fdf.h"
 
 // ROTACIONA O MAPA: TRANSLAÇÃO
-/* res[3][0] se refere ao eixo X
+/* Essa translação é usada somente para alterar o ponto de referência do mapa.
+ * É como se [0, 0] ficasse no meio da imagem para que o mapa possa ficar
+ * posicionado no centro da janela. 
+ * res[3][0] se refere ao eixo X
  * res[3][1] se refere ao eixo Y
  * res[3][2] se refere ao eixo Z
  * res[2][2] se refere ao ajuste da escala de Z
