@@ -12,6 +12,7 @@ Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](
 - **Movimentação (setas <kbd>←</kbd>, <kbd>↑</kbd>, <kbd>→</kbd> e <kbd>↓</kbd> do teclado)**: Movimenta para cima, para baixo, para esquerda e para a direita.
 - **Rotação (clicando através do menu)**: Rotaciona nos três eixos, **x**, **y** e **z**.
 - **Reset (tecla <kbd>backspace</kbd>)**: Retorna a projeção para sua versão inicial.
+- **Fechar a janela (tecla <kbd>esc</kbd>)**: Fecha a janela.
 
 ## Instalação da MiniLibX <img src="https://img.shields.io/badge/GRADE-115%2F100-green" align="right">
 
