@@ -8,10 +8,10 @@ FDF é a abreviação de 'Fil de Fer' em francês, que significa 'wireframe mode
 
 Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](./maps/42.fdf), foram implementadas algumas funcionalidades:
 
-- **Zoom (teclas `+` e `-`)**: Aumenta ou diminui a projeção.
-- **Movimentação (setas `←`, `→`, `↑` e `↓` do teclado)**: Movimenta para cima, para baixo, para esquerda e para a direita.
+- **Zoom (teclas <kbd>+</kbd> e <kbd>-</kbd>, ou <kbd>scroll wheel</kbd>)**: Aumenta ou diminui a projeção.
+- **Movimentação (setas <kbd>←</kbd>, <kbd>↑</kbd>, <kbd>→</kbd> e <kbd>↓</kbd> do teclado)**: Movimenta para cima, para baixo, para esquerda e para a direita.
 - **Rotação (clicando através do menu)**: Rotaciona nos três eixos, **x**, **y** e **z**.
-- **Reset (tecla `backspace`)**: Retorna a projeção para sua versão inicial.
+- **Reset (tecla <kbd>backspace</kbd>)**: Retorna a projeção para sua versão inicial.
 
 ## Instalação da MiniLibX <img src="https://img.shields.io/badge/GRADE-115%2F100-green" align="right">
 
