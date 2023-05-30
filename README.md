@@ -21,17 +21,11 @@ Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](
 - Passo a Passo, no terminal:
 
 1. `git clone https://github.com/42Paris/minilibx-linux`
-
 2. `cd minilibx-linux`
-
 3. `sudo apt-get install libxext-dev libxrandr-dev libx11-dev libbsd-dev libssl-dev`
-
 4. `sudo mv ./man/man1 /usr/local/man/`
-
 5. `sudo mv ./mlx.h /usr/local/include/`
-
 6. `make`
-
 7. `sudo mv ./libmlx.a /usr/local/lib/`
 
 - Exemplo de compilação:
