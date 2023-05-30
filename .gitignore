@@ -52,7 +52,6 @@ Mkfile.old
 dkms.conf
 
 # Specifics
-/maps/
 /infos/minilibx-linux/
 fdf
 fdf_bonus
