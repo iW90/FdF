@@ -4,7 +4,7 @@
 
 FDF é a abreviação de 'Fil de Fer' em francês, que significa 'wireframe model' (modelo de estrutura de arame). Este projeto de `computação gráfica` trata da representação de uma paisagem como um objeto 3D no qual todas as superfícies são contornadas por linhas, permitindo o aprendizado de algumas noções básicas de programação gráfica, especialmente como colocar pontos no espaço, juntá-los e, mais importante, como ver a cena de um ponto de vista específico. Foi utilizada a MiniLibX, uma biblioteca desenvolvida internamente pela 42 que inclui o básico necessário para abrir uma janela, colocar imagens na tela e lidar com eventos de mouse e teclado.
 
-## Bônus
+## Bônus <img src="https://img.shields.io/badge/GRADE-115%2F100-green" align="right">
 
 Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](./maps/42.fdf), foram implementadas algumas funcionalidades:
 
@@ -14,7 +14,7 @@ Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](
 - **Reset (tecla <kbd>backspace</kbd>)**: Retorna a projeção para sua versão inicial.
 - **Fechar a janela (tecla <kbd>esc</kbd>)**: Fecha a janela.
 
-## Instalação da MiniLibX <img src="https://img.shields.io/badge/GRADE-115%2F100-green" align="right">
+## Instalação da MiniLibX
 
 > Necessária para a execução do programa (no Linux).
 
