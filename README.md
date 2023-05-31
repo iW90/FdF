@@ -34,7 +34,7 @@ Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](
 
 ## Mapas
 
-Geradas a partir de arquivos com extensão `.fdf`, as imagens apresentadas na tela possuem 3 dimensões, e são inclinadas de acordo com a projeção isométrica.
+Renderizadas a partir de arquivos com extensão `.fdf`, as imagens apresentadas na tela possuem 3 dimensões, e são inclinadas de acordo com a projeção isométrica.
 
 > Uma visão isométrica de um objeto pode ser obtida escolhendo-se a direção de visualização de modo que os ângulos entre as projeções dos eixos x, y e z sejam todos iguais, ou 120°. Por exemplo, com um cubo, isso é feito primeiro olhando diretamente para uma face. Em seguida, o cubo é girado ±45° em torno do eixo vertical, seguido por uma rotação de aproximadamente 35,264° (precisamente arcsin 1⁄√3 ou arctan 1⁄√2, que está relacionado ao ângulo mágico) sobre o eixo horizontal.
 
