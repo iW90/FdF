@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 16:09:53 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:39 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:20 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // DIMENSIONADOR
 /* Realiza a contagem das colunas e linhas para definir, respectivamente, a

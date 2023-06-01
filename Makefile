@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+         #
+#    By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 11:52:50 by inwagner          #+#    #+#              #
-#    Updated: 2023/03/17 19:59:13 by inwagner         ###   ########.fr        #
+#    Updated: 2023/06/01 09:57:46 by inwagner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:=	fdf
 BNAME	:=	fdf_bonus
 
-HDR		:=	-I ./includes/
+HDR		:=	-I ./incl/
 CFLAG	:=	-Wall -Werror -Wextra
 MFLAG	:=	-lbsd -lmlx -lXext -lX11 -lm
 
@@ -74,11 +74,11 @@ $(OSRC)%.o: $(BSRC)%.c
 	@cc $(CFLAG) $(HDR) $(MFLAG) -c $< -o $@
 
 clean:
-	@[ -d ./objs ] && rm -rf ./objs || [ -f Makefile ]
+	@[ -d $(OSRC) ] && rm -rf $(OSRC) || [ -f Makefile ]
 
 fclean: clean
-	@[ -f ./fdf ] && rm fdf && echo FdF cleaned ||  [ -f Makefile ]
-	@[ -f ./fdf_bonus ] && rm fdf_bonus && echo FdF Bonus cleaned || [ -f Makefile ]
+	@[ -f ./$(NAME) ] && rm $(NAME) && echo $(NAME) cleaned ||  [ -f Makefile ]
+	@[ -f ./$(BNAME) ] && rm $(BNAME) && echo $(BNAME) cleaned || [ -f Makefile ]
 
 re: fclean all
 

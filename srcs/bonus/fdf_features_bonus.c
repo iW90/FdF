@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_features_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:08:22 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:53:06 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:57:18 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf_bonus.h"
+#include "fdf_bonus.h"
 
 // ZOOM
 void	zoom_map(t_mdata *m, double scale)

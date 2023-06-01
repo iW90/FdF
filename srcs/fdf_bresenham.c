@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_bresenham.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 20:52:27 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:55:51 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // ALGORITMO DE BRESENHAM
 /* é um algoritmo criado para o desenho de linhas que permite determinar quais

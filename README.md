@@ -8,9 +8,10 @@ FDF é a abreviação de 'Fil de Fer' em francês, que significa modelo de estru
 
 Além de simplesmente exibir na tela uma projeção isométrica de um [arquivo](./maps/42.fdf), foram implementadas algumas funcionalidades:
 
-- **Zoom (teclas <kbd>+</kbd> e <kbd>-</kbd>, ou <kbd>scroll wheel</kbd>)**: Aumenta ou diminui a projeção.
+- **Zoom (<kbd>scroll wheel</kbd>)**: Aumenta ou diminui a projeção.
+- **Altura** (teclas <kbd>+</kbd> e <kbd>-</kbd>): Aumenta ou diminui a altura (eixo Z).
 - **Movimentação (setas <kbd>←</kbd>, <kbd>↑</kbd>, <kbd>→</kbd> e <kbd>↓</kbd> do teclado)**: Movimenta para cima, para baixo, para esquerda e para a direita.
-- **Rotação (clicando através do menu)**: Rotaciona nos três eixos, **x**, **y** e **z**.
+- **Rotação (left-click antihorário e right-click horário, no menu)**: Rotaciona nos três eixos, **x**, **y** e **z**.
 - **Reset (tecla <kbd>backspace</kbd>)**: Retorna a projeção para sua versão inicial.
 - **Fechar a janela (tecla <kbd>esc</kbd>)**: Fecha a janela.
 
@@ -94,4 +95,8 @@ E para executar, funciona da mesma forma que a versão estática, mudando soment
 
 ## Visualização
 
-> *Soon.*
+<div align="center">
+
+![t1.fdf](./info/t1.png)
+
+</div>

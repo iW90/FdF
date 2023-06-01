@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:41:10 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:43 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:24 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 int	ft_strncmp(const char *stra, const char *strb, size_t n)
 {

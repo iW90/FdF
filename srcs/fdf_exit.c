@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_exit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:01:05 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:17 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:05 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // TRATAMENTO DE ERRO
 /* A função "perror" imprime a mensagem referente ao último erro gravado, e a

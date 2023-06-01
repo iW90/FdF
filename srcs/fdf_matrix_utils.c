@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_matrix_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 10:16:29 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:27 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:12 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // PREENCHEDOR DE MATRIZ IDENTIDADE
 /* Matriz identidade possui todos os seus índices da diagonal principal

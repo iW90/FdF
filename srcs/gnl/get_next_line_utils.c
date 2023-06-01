@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:08:55 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/17 18:59:50 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:55:55 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/get_next_line.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(const char *src)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_makers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:33:21 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:21 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:08 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 void	map_maker(char **argv, t_mdata *mlxdata)
 {

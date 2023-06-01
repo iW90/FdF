@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_draw.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 14:23:44 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:10 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:53 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 void	put_pixel(t_mdata *m, int x, int y, int color)
 {

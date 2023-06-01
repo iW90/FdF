@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:52:59 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 14:25:04 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:57:11 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/fdf_bonus.h"
+#include "fdf_bonus.h"
 
 int	main(int argc, char **argv)
 {

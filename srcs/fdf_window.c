@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_window.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 22:20:23 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:47 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:28 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // ATALHOS DO TECLADO
 /* Se pressionado o botão ESC, o programa será encerrado.

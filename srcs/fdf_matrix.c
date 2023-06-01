@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf_matrix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inwagner <inwagner@student.42.fr>          +#+  +:+       +#+        */
+/*   By: inwagner <inwagner@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 21:37:24 by inwagner          #+#    #+#             */
-/*   Updated: 2023/03/15 11:54:32 by inwagner         ###   ########.fr       */
+/*   Updated: 2023/06/01 09:56:15 by inwagner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 
 // ROTACIONA O MAPA: TRANSLAÇÃO
 /* Essa translação é usada somente para alterar o ponto de referência do mapa.
